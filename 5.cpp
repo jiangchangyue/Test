@@ -1,4 +1,4 @@
-#include<stdio.h>
+/*#include<stdio.h>
 #include<stdlib.h>
 const int MAXSIZE=1000;
 
@@ -66,9 +66,9 @@ void SumTriple(TSMatrix *A,TSMatrix *B,TSMatrix *C)
 				 }
 		
 		 }//else if(A->data[x].i==B->data[y].i)
-		 else if(A->data[x].i>B->data[y].i)
+		 else if(A->data[x].i>A->data[y].i)
 		 {
-			 EnterTriple(C,B->data[y].i,B->data[y].j,B->data[y].e);
+			 EnterTriple(C,B->data[x].i,B->data[x].j,B->data[x].e);
 			 y++;
 		 }
 	}//while
@@ -77,9 +77,9 @@ void SumTriple(TSMatrix *A,TSMatrix *B,TSMatrix *C)
 		EnterTriple(C,A->data[x].i,A->data[x].j,A->data[x].e);
 		x++;
 	}
-	while(y<B->len)
+	while(y<A->len)
 	{
-		EnterTriple(C,B->data[y].i,B->data[y].j,B->data[y].e);
+		EnterTriple(C,B->data[x].i,B->data[x].j,B->data[x].e);
 		 y++;
 	}
 }//void
@@ -113,5 +113,93 @@ int main()
 
 	SumTriple(&A,&B,&C);
 	TraverseTriple(&C);
+	return 0;
+}
+*/
+
+
+/*#include<iostream>
+using namespace std;
+int i=100;
+int fun()
+{
+	static int i=10;
+	return ++i;//这个i和上面的i不是同一个
+}
+int main()
+{
+	fun();//这里的i=11;
+	cout<<fun()<<","<<i;
+	return 0;
+}*/
+#include<iostream>
+using namespace std;
+typedef struct Node
+{
+	int data;
+	Node *next;
+}*node;
+void crect(node &L,int n)
+{
+	L=NULL;
+	int a;
+	node s;
+	for(int i=0;i<n;i++)
+	{
+		s=new Node;
+		cin>>a;
+		s->data=a;
+		s->next=L;
+		L=s;
+	}
+	node p=L,q;
+	L=NULL;
+	while(p)
+	{
+		q=p;
+		p=p->next;
+		q->next=L;
+		L=q;
+	}
+}
+void show(node L)
+{
+	node p=L;
+	while(p)
+	{
+		cout<<p->data<<'\t';
+		p=p->next;
+	}
+}
+void inverv(node &L,int m)
+{
+	node p=L,q=L;
+	for(int i=0;i<m-1;i++)
+	{
+		p=p->next;
+	}
+	for( i=0;i<m-2;i++)
+	{
+		q=q->next;
+	}
+	node N,s;
+	N=NULL;
+	while(p)
+	{
+		s=p;
+		p=p->next;
+		s->next=N;
+		N=s;
+	}
+	q->next=N;
+}
+int main()
+{
+	node L;
+	crect(L,9);
+	show(L);
+	cout<<endl;
+	inverv(L,5);
+	show(L);
 	return 0;
 }
