@@ -1,0 +1,27 @@
+<html>
+<body>
+<pre>
+<h1>Build Log</h1>
+<h3>
+--------------------Configuration: STL_µü´úÆ÷¶ÑÅÅĞò - Win32 Debug--------------------
+</h3>
+<h3>Command Lines</h3>
+Creating temporary file "C:\Users\DELL\AppData\Local\Temp\RSP65CE.tmp" with contents
+[
+/nologo /MLd /W3 /Gm /GX /ZI /Od /D "WIN32" /D "_DEBUG" /D "_CONSOLE" /D "_MBCS" /Fp"Debug/STL_µü´úÆ÷¶ÑÅÅĞò.pch" /Yu"stdafx.h" /Fo"Debug/" /Fd"Debug/" /FD /GZ /c 
+"E:\2017211625_½¯²ıÔ¾_³ÌĞòÉè¼Æ\STL_µü´úÆ÷¶ÑÅÅĞò\STL_µü´úÆ÷¶ÑÅÅĞò.cpp"
+]
+Creating command line "cl.exe @C:\Users\DELL\AppData\Local\Temp\RSP65CE.tmp" 
+<h3>Output Window</h3>
+Compiling...
+STL_µü´úÆ÷¶ÑÅÅĞò.cpp
+e:\2017211625_½¯²ıÔ¾_³ÌĞòÉè¼Æ\stl_µü´úÆ÷¶ÑÅÅĞò\stl_µü´úÆ÷¶ÑÅÅĞò.cpp(4) : fatal error C1853: 'Debug/STL_µü´úÆ÷¶ÑÅÅĞò.pch' is not a precompiled header file created with this compiler
+Error executing cl.exe.
+
+
+
+<h3>Results</h3>
+STL_µü´úÆ÷¶ÑÅÅĞò.obj - 1 error(s), 0 warning(s)
+</pre>
+</body>
+</html>
