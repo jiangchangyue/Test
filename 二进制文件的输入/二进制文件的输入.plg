@@ -1,0 +1,25 @@
+<html>
+<body>
+<pre>
+<h1>Build Log</h1>
+<h3>
+--------------------Configuration: 二进制文件的输入 - Win32 Debug--------------------
+</h3>
+<h3>Command Lines</h3>
+Creating temporary file "C:\Users\lenovo\AppData\Local\Temp\RSPADC4.tmp" with contents
+[
+/nologo /MLd /W3 /Gm /GX /ZI /Od /D "WIN32" /D "_DEBUG" /D "_CONSOLE" /D "_MBCS" /Fo"Debug/" /Fd"Debug/" /FD /GZ /c 
+"H:\2017211625_蒋昌跃_程序设计\二进制文件的输入\二进制文件的输入.cpp"
+]
+Creating command line "cl.exe @C:\Users\lenovo\AppData\Local\Temp\RSPADC4.tmp" 
+<h3>Output Window</h3>
+Compiling...
+二进制文件的输入.cpp
+
+
+
+<h3>Results</h3>
+二进制文件的输入.obj - 0 error(s), 0 warning(s)
+</pre>
+</body>
+</html>
