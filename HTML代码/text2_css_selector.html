@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+
+	<!--第一种  内部样式表   通过选择器定义指定内容-->
+	<style type="text/css">
+		body{background-color: red}
+		p{margin-left: 20px}
+	</style>
+
+
+	<!--第二种  外部样式表：可被多次引用-->
+	 <link rel="stylesheet" type="text/css" href="test.css"> <!-- href引用属性，随意引用-->
+
+
+	<!-- 选择器 -->
+	<style type="text/css">
+		/*四：通配符选择器   对所有的产生影响*/
+		*{
+			margin:0;
+		}
+		/*一：类选择器*/
+		.parag{
+			background-color:blue;
+			color: red;
+			margin-left:300px;
+		}
+		/*二：id选择器*/
+		#idsel{
+			font-size: 30px;
+			background-color: green;
+		}
+		/*三：标签选择器*/
+		span{ 
+			background-color: brown;
+			color:yellow;
+			font-size: 40px;
+		}
+		/*五：逗号选择器,也叫并集选择器*/
+		.parag,#idsel,span{
+			color:red;/*所有class id span字体变红*/
+		}
+		/*六：空格选择器，也叫后代选择器*/
+		div h4{/*选中h4后代*/
+			color:green;
+		}
+		div p{/*选中p后代*/
+			color:yellow;
+			font-size:40px;
+		}
+		/*七：加号选择器*/
+		div+p{/*div与p平级*/
+			color:brown;
+			font-size: 30px;
+		}
+		/*八：大于号选择器，直接孩子选择器*/
+		div>p{
+			color:pink;
+		}
+	</style>
+
+
+	<!-- 层叠性测试 -->
+	<style type="text/css">
+		.cascafe{
+			color:red;
+			background-color: aqua;
+		}
+		.cascafe{/*属性有冲突   就近原则*/
+			color:green;
+			font-size: 60px;
+		}
+	</style>
+	
+</head>
+<body>
+	<!--第三种  内联样式   只作用于 当前标签-->
+	<p style="background-color: green;margin-left: 20px">This is a paragraph</p> 
+
+
+	<!--选择器实验-->
+		<p class="parag">This is our first test for class selector in css</p>
+		<p id="idsel">This is our second test for id selector in css</p>
+		<span>This is our third test for tag selector in css</span>
+		
+		<div>
+			<h4>
+				后代标签实验
+			</h4>
+			<p>
+				第二个后代标签实验
+				<h4>
+					后代标签
+				</h4>
+			</p>
+		</div>
+
+		<p>相邻兄弟选择器实验</p><!-- 与div相邻，位置最接近，位置平级 -->
+		<p>不相邻兄弟选择器实验</p>
+
+		<div>
+			<p>
+				直接孩子选择器实验
+				<blockquote>
+					<p>
+						是不是“直接孩子”关系
+					</p>
+				</blockquote>
+			</p>
+		</div>
+		
+		<div class="cascafe">
+			这是层叠性测试
+			<p>这是继承性测试</p>
+		</div>
+</body>
+</html>

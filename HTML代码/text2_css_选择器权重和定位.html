@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style type="text/css">
+		/*
+			每个标签选择器的css权重值为 0 0 0 1
+			每个类选择器的css权重值为   0 0 1 0
+			每个id选择去器的css权重值为 0 1 0 0
+			每个行内样式的css权重值为   1 0 0 0
+			每个！important 的css权重值为  无穷大
+		*/
+
+		.pclsel{/*类选择器 0010*/
+			color: orangered;
+		}
+		div p{/*标签选择器0001     叠加0002*/
+			color: yellow;
+		}
+		.dclsel{
+			color: deeppink;
+		}
+
+		/*id选择器权重比较*/
+		.dclsel{/*0*/
+			color: orangered;
+		}
+		#pidsel{/*id选择器 0100*/
+			color: greenyellow;
+		}
+		.pclsel{/*0010*/
+			color: lightpink !important;/*无穷大*/
+		}
+
+		/*综合计算权重*/
+		.divcl{/*0 0 1 0*/
+			color: orangered;
+		}
+		div div{/*0 0 0 2*/
+			color: red;
+		}
+		.divcl div div .bdivcl{/*0022*/
+			color: black;
+		}
+		div div div  .bdivcl{/*0013*/
+			color:blue;
+		}
+		.divcl div div div{/*0013*/
+			color: yellow;
+		}
+
+		/*定位*/
+		body{
+			margin: 0; 
+		}
+		div{
+			height: 200px;
+			width: 200px;
+			border: 1px solid #000000;
+		}
+		.rect1{
+			height: 200px;
+			width: 200px;
+			background-color: red;
+			/*float: left;*/
+		}
+		.rect2{
+			height: 200px;
+			width: 200px;
+			background-color: orangered;
+			position: relative;/*相对定位，需要配合left  top坐标使用，离开以后还是占领者原来的位置，不会脱离标准文档流*/
+			left:100px;
+			top:100px;
+			/*float: left;*/
+		}
+		.rect3{
+			height: 200px;
+			width:200px;
+			background-color: yellow;
+			/*float: left;*/
+			position: absolute;/*绝对定位，配合left top坐标使用，离开以后不再占领原来的位置，脱离标准文档流*/
+			left: 300px;
+			top:300px;
+		}
+		.rect4{
+			height: 200px;
+			width: 200px;
+			background-color: green;
+			/*float: left;*/
+			position: fixed;/*固定定位，需要配合left top等坐标信息使用*/
+			right: 20px;
+			bottom: 20px;
+			/*静态定位  position：static ，需要配合left top等坐标信息使用*/
+		}
+	</style>
+</head>
+<body>
+	<div class="dclsel">
+		<p class="pclsel" id="pclsel" style="color:palevioletred">
+			类和id选择器优先级权重测试  <!-- 行内样式优先级权重值为1000 -->
+		</p>
+	</div>
+	<div class="divcl">
+			<div>
+				<div>
+					<div class="bdivcl">
+						综合权重计算例子测试
+					</div>
+				</div>
+			</div>
+		</div>
+	<div class="rect1"></div>
+	<div class="rect2"></div>
+	<div class="rect3"></div>
+	<div class="rect4"></div>
+</body>
+</html>

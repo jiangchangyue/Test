@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title></title>
+	<script>
+		var name='Rui';
+		var sex='男';
+		switch(sex)
+		{
+			case '男':
+				alert(name+'先生，您好');
+				break;
+			case '女':
+				alert(name+'女士，您好');
+				break;
+			default:
+				alert(name+',您好');
+		}
+
+		//三目运算符  ？:
+		var iNum=14;
+		iNum%2==0?alert('双数'):alert('单数');
+	</script> 
+
+	<script>//循环流程控制
+		for(var i=0;i<5;i++)
+		{
+			if(i==2)
+			{
+				break;//整个循环中断
+				//continue; //本次循环中断
+			}
+			alert(i);
+		}
+
+		//真：true 非零数字(1   0.2 -3) 非空字符串（abc 空格）非空对象（document）
+		//假：false 零数字  空字符串  空对象（Null）  undefined
+
+		var bTrueFalse= 1;
+		if(bTrueFalse)
+		{
+			alert('true');
+		}
+		else
+		{
+			alert('false');
+		}
+	</script> 
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,44 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:mf="http://www.mf999.com/magicflu">
+<head>
+	<meta charset="utf-8">
+	<title></title>
+	<style type="text/css">
+		#div1{
+			display:none;
+		}
+	</style>
+	<script>
+		function showHide()
+		{
+			var oDiv=document.getElementById('div1');
+			var oInput=document.getElementById('企业');
+
+			if(oDiv.style.display=='block')
+			{
+				oDiv.style.display='none';
+				oInput.value='企业结构';
+			}
+			else
+			{
+				oDiv.style.display='block';
+				oInput.value='隐藏';
+			}
+		}
+	</script>
+</head>
+<body>
+<h1 style="text-align: center;">北京中融</h1>
+
+<input id="企业" onclick="showHide()" type="button" value="企业结构" />
+
+<div id="div1">
+<ul>
+	<a href="http://whlcgyl.com.magicflu.com:999/magicflu/html/form/main.jsp?spaceId=00000000-0000-0000-0000-000000000000&redirect=true#">企业结构</a><br/>
+	<a href="http://whlcgyl.com.magicflu.com:999/magicflu/html/form/main.jsp?spaceId=00000000-0000-0000-0000-000000000000&redirect=true#">人员信息</a><br/>
+</ul>
+</div>
+&nbsp;
+
+<p>&nbsp;</p>
+</body>
+</html>

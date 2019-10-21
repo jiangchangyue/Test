@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+
+	<script>
+		window.onload=function()
+		{
+			var oTxt1=document.getElementById('txt1');
+			var oTxt2=document.getElementById('txt2');
+			var oBtn=document.getElementById('btn1');
+
+			oBtn.onclick=function()
+			{
+				//字符串相加
+				// alert(oTxt1.value + oTxt2.value);
+
+				//字符转数字
+				// alert(parseInt(oTxt1.value)+parseInt(oTxt2.value));
+
+				// var tempvar='12p34';
+				// alert(parseInt(oTxt1.value)+parseInt(tempvar));
+
+				// var tempvar='abc';
+				// alert(parseInt(oTxt1.value)+parseInt(tempvar));
+
+				// var tempvar='abc';
+				// var tempvar1='def';
+				// alert(parseInt(tempvar)==parseInt(tempvar1));
+
+				// var tempvar='abc';
+				// alert(isNaN(tempvar));//判断是不是无穷大
+
+				var tmpnum1=parseInt(oTxt1.value)
+				var tmpnum2=parseInt(oTxt2.value)
+
+				if(isNaN(tmpnum1))
+				{
+					alert('第一数字输入错误');
+				}
+				else if(isNaN(tmpnum2))
+				{
+					alert('第二数字输入错误');
+				}
+				else
+				{
+					alert(tmpnum1+tmpnum2);
+				}
+
+				// var flnum=3.5;
+				// alert(parseInt(flnum));
+				// alert(parseFloat(flnum));
+
+				/*运算符*/
+				var a='5';
+				var b='5';
+				alert(a==b);//先转换类型再比较
+        		alert("aa"=="aa");//true
+        		alert(12=="12");//true   ==将字符串转换成数字
+        		alert(0=="+0");//true
+        		alert(0==[0]);//true
+        		alert("aaa"==["aaa"]);//true
+        		alert(Infinity=="Infinity");//true
+        		alert(123=="123");//true
+        		alert("+0"==0);//true
+        		alert("-1234567"==-1234567);//true
+        		alert("NaN"==NaN);//false
+
+				alert(a===b);//不转换类型直接比较
+				alert(1>=2);//false
+				alert(3<=4);//true
+				alert(2*3);//6
+				alert(6/2);//3
+				alert(5%2);//1
+
+				var a='7';
+				var b='5';
+				var c=7;
+				var d=5;
+				alert(a+b);//1.字符串连接   2.数字相加
+				alert(a-b);//数字相减
+
+			};
+		}
+	</script>
+	
+	<script>
+		//i+=1  等价于 i=i+1
+		var iTest=10;
+		iTest+=3;
+		alert(iTest);// +=、 -=、*=、、/=、%=
+
+		//不等 
+		alert(5!=5);
+		alert('5'!=5);
+		alert('5'!==5);
+
+
+		//n是不是两位数？n为正整数
+		//条件判断：n是不是大于9，且小于100？
+		var iNum=888;
+		if(iNum>9&&iNu<100)
+		{
+			alert('是两位数')；
+		}
+		else
+		{
+			alert('不是两位数')；
+		}
+
+		alert(!!true);
+
+	</script>
+</head>
+<body>
+	<input id="txt1" type="text">
+	<input id="txt2" type="text">
+	<input id="btn1" type="button" value="求和">
+</body>
+</html>

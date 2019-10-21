@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title></title>
+	<script>
+		//1.字面量创建对象
+		var obj=
+		{
+			uname:"小明",
+			age:18,
+			sex:"男",
+			say:function()
+			{
+				document.write("hello world!");
+			}
+		}
+		document.write(obj.uname+"<br>");
+		document.write(obj['age']+"<br>");
+		document.write(obj['sex']+"<br>");
+		obj.say();
+	</script> 
+	<script>
+		//2.通过工厂模式创建
+		function studentInf(name,age,sex)
+		{
+			var obj=new Object();
+			obj.name=name;
+			obj.age=age;
+			obj.sex=sex;
+			obj.say:function()
+			{
+				document.write("hello world!");
+			}
+			return obj;
+		}
+		var per1=studentInf('小明','18','男');
+		document.write(per1.name+"<br>");
+		document.write(per1['age']+"<br>");
+		document.write(per1['sex']+"<br>");
+		per1.say();
+
+		//构造函数
+		function Book(uname,author,publish)
+		{
+			this.name=uname;
+			this.author=author;
+			this.publish=
+		}
+	</script> 
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script>
+		var arr=[9,3,4,7,1,2];
+		function bubbleSort(arr)
+		{
+			for(var j=0;j<arr.length-1;j++)
+			{
+				for(var i=0;i<arr.length-1-j;i++)
+				{
+					if(arr[i]>arr[i+1])
+					{
+						var temp=arr[i];
+						arr[i]=arr[i+1];
+						arr[i+1]=temp;
+					}
+				}
+			}
+			return arr;
+		}
+		console.log(bubbleSort(arr));
+	</script>
+	<script>
+		function quick_sort(arr,from,to)
+		{
+			var i=from;
+			var j=to;
+			var key=arr[from];
+			if(from>=to)
+			{
+				return;
+			}
+			while(i<j)
+			{
+				while(arr[j]>key&&i<j){
+					j--;
+				}
+				while(arr[i]<=key&&i<j){
+					i++;
+				}
+				if(i<j)
+				{
+					var temp=arr[i];
+					arr[i]=arr[j];
+					arr[j]=temp;
+				}
+			}
+			arr[from]=arr[i];
+			arr[i]=key;
+			quick_sort(arr,from,i-1);
+			quick_sort(arr,i+1,to);
+		}
+		var arr=[3,4,5,-5,6,0,2,-1,1,9];
+		quick_sort(arr,0,arr.length-1);
+		console.log(arr);
+	</script>
+</head>
+<body>
+
+</body>
+</html>
+

@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script>
+		function color1()//无返回值
+		{
+			document.write("color1="+"blue"+"<br>");
+		}
+		color1();
+		function color2()//有返回值
+		{
+			return "red";
+		}
+		document.write("color2="+color2()+"<br>");
+
+		function fn1()//相互调用
+		{
+			return 10;
+		}
+		function fn2()
+		{
+			document.write(fn1()+"<br>");
+		}
+		fn2();
+
+		function fun(num)//递归函数
+		{
+			if(num>=1)//num=6:num=5 fun(5) write(5)
+			{
+				num=num-1;
+				fun(num);
+			}
+			document.write(num+"<br>");
+		}
+		fun(6);
+
+		function Factorial(num)
+		{
+			if(num==0||num==1)return 1;
+			else return num*Factorial(--num);
+		}
+		document.write(Factorial(3));
+	</script>
+
+	<script>
+		//eval()计算某个字符串，并执行其中的js
+		eval("x=10;y=20;document.write('x=10;y=20;x*y=',x*y+'<br>'')");
+		document.write(eval("2+2")+"<br>");
+		var x=10;
+		document.write(eval(x+17)+"<br>");
+
+		//escape()函数可对字符串进行编码，这样就可以在所有的计算机上读取该字符串
+		//unescape()函数可对通过escape()编码的字符串进行解码
+		var test="Hello,World!";
+		test=escape(test);
+		document.write(test+"<br>");
+
+		test=unescape(test);
+		document.write(test+"<br>");
+
+
+		//isNaN()函数用于检查其参数是否是非数字值
+		document.write(isNaN(123)+"<br>");
+		document.write(isNaN(-1.23)+"<br>");
+		document.write(isNaN(5-2)+"<br>");
+		document.write(isNaN(0)+"<br>");
+		document.write(isNaN("hello")+"<br>");
+		document.write(isNaN("2005/12/12")+"<br>");
+
+
+		//parseInt(字符串，进制数)  函数可解析一个字符串，并返回一个整数
+		document.write(parseInt("10")+"<br>");
+		document.write(parseInt("19",10)+"<br>");
+		document.write(parseInt("11",2)+"<br>");
+		document.write(parseInt("17",8)+"<br>");
+		document.write(parseInt("1f",16)+"<br>");
+		document.write(parseInt("010")+"<br>");
+
+
+		//parseFloat()  函数可解析一个字符串，并返回一个浮点数
+		document.write(parseFloat("10")+"<br>");
+		document.write(parseFloat("10.33")+"<br>");
+		document.write(parseFloat("34 45 66")+"<br>");
+		document.write(parseFloat("60")+"<br>");
+		document.write(parseFloat("40 years")+"<br>");
+		document.write(parseFloat("he was 40")+"<br>");
+
+	</script>
+
+	<script>
+		//1.全局变量：在全局作用域下的变量
+		//2.局部变量：在局部作用域下的变量
+		var num1=10;//全局变量
+		function fn()
+		{
+			var num2=20;//局部变量
+			num3=30;//全局变量
+			document.write(num1+"<br>");
+		}
+		fn();
+
+		document.write(num2+"<br>");
+		document.write(num3+"<br>");
+	</script>
+
+	<script>
+		var str="hello world!";
+		var n=str.search("world");
+		document.write(n+"<br>");
+		var txt=str.replace("world","Micorft")
+		document.write(txt+"<br>");
+		//是否带有小数
+		function isDecimal(strValue)
+		{
+			var objRegExp=/^\d+\.\d+$/;
+			return objRegExp.test(strValue);
+		}
+		document.write(isDecimal(11.23)+"<br>");
+		document.write(isDecimal(11)+"<br>");
+
+		//校验是否全由8为数字组成
+		function isStuentNo(str)
+		{
+			var reg=/^[0-9]{8}$/;
+			return reg.test(str);
+		}
+		document.write(isStuentNo(13245678)+"<br>");
+		document.write(isStuentNo(1234567)+"<br>");
+	</script>
+
+</head>
+<body>
+
+</body>
+</html>
