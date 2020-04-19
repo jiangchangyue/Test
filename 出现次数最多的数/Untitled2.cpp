@@ -35,6 +35,11 @@ int main()
 				max=temp;
 				k=a[i-1];
 			}
+			else if(max==temp)
+			{
+				if(k>a[i-1])
+					k=a[i-1];
+			}
 			temp=1;
 		}
 	}
